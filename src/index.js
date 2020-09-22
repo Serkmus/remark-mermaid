@@ -7,8 +7,6 @@ const renderFromFile = utils.renderFromFile;
 const getDestinationDir = utils.getDestinationDir;
 const createMermaidDiv = utils.createMermaidDiv;
 
-// TEST
-
 const PLUGIN_NAME = 'remark-mermaid';
 
 /**
@@ -185,6 +183,7 @@ function visitImage(ast, vFile, isSimple) {
  */
 function mermaid(options = {}) {
   const simpleMode = options.simple || false;
+  const directory = options.directory || vFile.data.destinationDir;
 
   /**
    * @param {object} ast MDAST
@@ -193,6 +192,7 @@ function mermaid(options = {}) {
    * @return {object}
    */
   return function transformer(ast, vFile, next) {
+    vFile.data.destinationDir = directory;
     visitCodeBlock(ast, vFile, simpleMode);
     visitLink(ast, vFile, simpleMode);
     visitImage(ast, vFile, simpleMode);
