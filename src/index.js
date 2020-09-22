@@ -7,6 +7,8 @@ const renderFromFile = utils.renderFromFile;
 const getDestinationDir = utils.getDestinationDir;
 const createMermaidDiv = utils.createMermaidDiv;
 
+// TEST
+
 const PLUGIN_NAME = 'remark-mermaid';
 
 /**
