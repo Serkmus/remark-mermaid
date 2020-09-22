@@ -183,7 +183,7 @@ function visitImage(ast, vFile, isSimple) {
  */
 function mermaid(options = {}) {
   const simpleMode = options.simple || false;
-  const directory = options.directory || vFile.data.destinationDir;
+  const vFileDirectory = './static/mermaid/';
 
   /**
    * @param {object} ast MDAST
@@ -192,7 +192,8 @@ function mermaid(options = {}) {
    * @return {object}
    */
   return function transformer(ast, vFile, next) {
-    vFile.data.destinationDir = directory;
+    vFile.data.destinationDir = vFileDirectory;
+    vFile.dirname = vFileDirectory;
     visitCodeBlock(ast, vFile, simpleMode);
     visitLink(ast, vFile, simpleMode);
     visitImage(ast, vFile, simpleMode);
