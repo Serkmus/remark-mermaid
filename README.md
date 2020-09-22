@@ -11,6 +11,13 @@ Replaces fenced code blocks in mermaid format with:
 
 You might also like [`remark-graphviz`](https://www.npmjs.com/package/remark-graphviz).
 
+## What is changed in this fork?
+
+- SVG images are now rendered in static/mermaid folder
+- During build there are placed in ./mermaid and served as /mermaid/*.svg
+
+This is done so we do not have them next to .md files but together with other static resources.
+
 ## Installation
 
 ```sh
