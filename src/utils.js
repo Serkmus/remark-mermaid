@@ -30,7 +30,7 @@ function render(source, destination) {
   // Clean up temporary file
   fs.removeSync(mmdPath);
 
-  return `./${svgFilename}`;
+  return `/mermaid/${svgFilename}`;
 }
 
 /**
