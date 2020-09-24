@@ -24,8 +24,7 @@ function render(source, destination) {
 
   // Write temporary file
   fs.outputFileSync(mmdPath, source);
-
-  console.log('running mmdc at: ', mmdcExecutable);
+  
   // Invoke mermaid.cli
   execSync(`${mmdcExecutable} -i ${mmdPath} -o ${svgPath} -b transparent`);
  
