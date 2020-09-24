@@ -184,7 +184,6 @@ function visitImage(ast, vFile, isSimple) {
 function mermaid(options = {}) {
   const simpleMode = options.simple || false;
   const vFileDirectory = './static/mermaid/';
-  console.log('remark mermaid');
 
   /**
    * @param {object} ast MDAST
@@ -193,7 +192,6 @@ function mermaid(options = {}) {
    * @return {object}
    */
   return function transformer(ast, vFile, next) {
-    console.log('transform remark mermaid');
     vFile.data.destinationDir = vFileDirectory;
     vFile.dirname = vFileDirectory;
     visitCodeBlock(ast, vFile, simpleMode);
