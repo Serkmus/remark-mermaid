@@ -15,7 +15,6 @@ You might also like [`remark-graphviz`](https://www.npmjs.com/package/remark-gra
 
 - SVG images are now rendered in static/mermaid folder
 - During build there are placed in ./mermaid and served as /mermaid/*.svg
-- In utils.js call mermaid-cli/index.bundle.js directly with node instead of using which.mmdc (because gitlab error: permission denied)
 
 This is done so we do not have them next to .md files but together with other static resources.
 
