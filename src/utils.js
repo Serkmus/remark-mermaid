@@ -16,8 +16,7 @@ const PLUGIN_NAME = 'remark-mermaid';
  */
 function render(source, destination) {
   const unique = crypto.createHmac('sha1', PLUGIN_NAME).update(source).digest('hex');
-  // const mmdcExecutable = which.sync('mmdc');
-  const mmdcExecutable = 'node /app/node_modules/@mermaid-js/mermaid-cli/index.bundle.js';
+  const mmdcExecutable = which.sync('mmdc');
   const mmdPath = path.join(destination, `${unique}.mmd`);
   const svgFilename = `${unique}.svg`;
   const svgPath = path.join(destination, svgFilename);
